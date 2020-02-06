@@ -168,3 +168,22 @@ curl: (7) Failed to connect to 127.0.0.1 port 8080: Connection refused
 qzhao-mbp:helm-test qzhao$ helm delete --purge running-warthog
 release "running-warthog" deleted
 ```
+---
+
+How do I un-expose (undo expose) service?
+
+Assuming you have a deployment called hello-world, and do a kubectl expose as follows:
+
+```kubectl expose deployment hello-world --type=ClusterIP --name=my-service```
+
+this will create a service called my-service, which makes your deployment accessible for debugging, as you described.
+
+To display information about the Service:
+
+```kubectl get services my-service```
+
+To delete this service when you are done debugging:
+
+```kubectl delete service my-service```
+
+Now your deployment is un-exposed.
