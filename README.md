@@ -187,3 +187,5 @@ To delete this service when you are done debugging:
 ```kubectl delete service my-service```
 
 Now your deployment is un-exposed.
+
+![](0.png)
